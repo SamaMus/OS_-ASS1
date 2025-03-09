@@ -6,7 +6,7 @@ from datetime import datetime
 NUM_REPLICAS = 3
 NUM_READERS = 10
 
-# Shared data
+# data
 readers_count = [0] * NUM_REPLICAS
 replica_mutex = [threading.Lock() for _ in range(NUM_REPLICAS)]
 reader_count_mutex = threading.Lock()
@@ -24,9 +24,10 @@ def initialize_replicas():
             file.write(f"Initial content of replica{i+1}.txt\n")
 
 def reader(reader_id):
-    time.sleep(random.randint(1, 3))  # Simulate random arrival
+    # We simulate random arrival
+    time.sleep(random.randint(1, 3))
     
-    # Choose the least loaded replica
+    # We choose the least loaded replica
     with reader_count_mutex:
         file_index = min(range(NUM_REPLICAS), key=lambda i: readers_count[i])
         readers_count[file_index] += 1
@@ -43,7 +44,8 @@ def reader(reader_id):
 
 def writer():
     while True:
-        time.sleep(random.randint(3, 6))  # Simulate periodic writes
+        # We simulate periodic writes
+        time.sleep(random.randint(3, 6))  
         with writer_mutex:
             for lock in replica_mutex:
                 lock.acquire()
@@ -61,7 +63,8 @@ def writer():
 
 def main():
     random.seed()
-    open("logging.txt", "w").close()  # Clear log file
+    # Here we clear log file
+    open("logging.txt", "w").close()  
     initialize_replicas()
     
     writer_thread = threading.Thread(target=writer, daemon=True)
@@ -72,7 +75,8 @@ def main():
         t = threading.Thread(target=reader, args=(i,))
         reader_threads.append(t)
         t.start()
-        time.sleep(random.randint(1, 2))  # Randomized reader spawn
+        # Randomized reader spawn
+        time.sleep(random.randint(1, 2)) 
     
     for t in reader_threads:
         t.join()
