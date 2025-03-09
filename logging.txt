@@ -1,0 +1,32 @@
+Operation: Reader 0 read from replica1.txt: Initial content of replica1.txt
+Readers: replica1: 0, replica2: 0, replica3: 0
+Operation: Writer updated all replicas.
+Writer active: Yes
+Writer active: No
+Operation: Reader 1 read from replica1.txt: Updated by writer at Sun Mar 09 20:25:48 2025
+Readers: replica1: 0, replica2: 0, replica3: 0
+Operation: Writer updated all replicas.
+Writer active: Yes
+Writer active: No
+Operation: Reader 2 read from replica1.txt: Updated by writer at Sun Mar 09 20:25:51 2025
+Readers: replica1: 0, replica2: 0, replica3: 0
+Operation: Reader 3 read from replica1.txt: Updated by writer at Sun Mar 09 20:25:51 2025
+Operation: Reader 4 read from replica2.txt: Updated by writer at Sun Mar 09 20:25:51 2025
+Readers: replica1: 0, replica2: 1, replica3: 0
+Readers: replica1: 0, replica2: 0, replica3: 0
+Operation: Reader 5 read from replica1.txt: Updated by writer at Sun Mar 09 20:25:51 2025
+Readers: replica1: 0, replica2: 0, replica3: 0
+Operation: Reader 7 read from replica1.txt: Updated by writer at Sun Mar 09 20:25:51 2025
+Readers: replica1: 0, replica2: 0, replica3: 0
+Operation: Writer updated all replicas.
+Writer active: Yes
+Writer active: No
+Operation: Reader 6 read from replica1.txt: Updated by writer at Sun Mar 09 20:25:57 2025
+Readers: replica1: 0, replica2: 0, replica3: 0
+Operation: Reader 8 read from replica1.txt: Updated by writer at Sun Mar 09 20:25:57 2025
+Readers: replica1: 0, replica2: 0, replica3: 0
+Operation: Writer updated all replicas.
+Writer active: Yes
+Writer active: No
+Operation: Reader 9 read from replica1.txt: Updated by writer at Sun Mar 09 20:26:01 2025
+Readers: replica1: 0, replica2: 0, replica3: 0
